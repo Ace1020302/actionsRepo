@@ -1,0 +1,26 @@
+<script type='text/javascript' src='{{ url_for("static", filename="main.js") }}'></script>
+<form action="/submit" method="post">
+
+<input type="text" placeholder="link code" name="code", value="{{ linkcode }}">
+<input type="text" placeholder="name" name="name", value="{{ name }}">
+<br>
+<br>
+<div>
+    {% for time in times %}
+    <input type="radio", name="time", value="{{ time }}">
+    <label> {{ time }} </label>
+    {% endfor %}
+</div>
+<br>
+<button type="submit">Submit</button>
+</form>
+<form action="/displaySubmissions">
+<button type="submit">Show</button>
+</form>
+<form action="/clearEstimates">
+<button type="submit">Clear Estimates</button>
+</form>
+
+<form><button formaction="/displaySubmissions">Show again</button></form>
+<button onclick="toggleVisibility('people')">Hide Submissions</button>
+
